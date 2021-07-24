@@ -6,7 +6,7 @@
 /*   By: kimkwanho <kimkwanho@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 11:14:39 by kimkwanho         #+#    #+#             */
-/*   Updated: 2021/07/24 18:39:15 by kimkwanho        ###   ########.fr       */
+/*   Updated: 2021/07/24 19:21:59 by kimkwanho        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void				*ft_loop(void *arg)
 
 void				ft_run_threads(t_all *all)
 {
-	t_philo 		*phl;
+	t_philo			*phl;
 	pthread_t		thd;
 	int				idx;
 

@@ -6,7 +6,7 @@
 /*   By: kimkwanho <kimkwanho@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 10:43:30 by kimkwanho         #+#    #+#             */
-/*   Updated: 2021/07/24 18:29:02 by kimkwanho        ###   ########.fr       */
+/*   Updated: 2021/07/24 19:23:03 by kimkwanho        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ void				ft_monitor_meal_dead(t_all *all);
 ** functions - msg.c
 */
 
-void				ft_msg_prt(t_philo *phl, char *c, char *stt, int i, int j);
+void				ft_msg_prt(t_philo *phl, char *c, char *stt, int i);
 void				ft_msg_select(t_philo *phl);
 
 /*

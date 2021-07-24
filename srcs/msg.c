@@ -6,7 +6,7 @@
 /*   By: kimkwanho <kimkwanho@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 15:04:54 by kimkwanho         #+#    #+#             */
-/*   Updated: 2021/07/24 18:37:35 by kimkwanho        ###   ########.fr       */
+/*   Updated: 2021/07/24 19:23:18 by kimkwanho        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,12 @@ void				ft_msg_0(char *m, char *t, char *c, int *i)
 	m[(*i)++] = '[';
 }
 
-void				ft_msg_prt(t_philo *phl, char *c, char *stt, int i, int j)
+void				ft_msg_prt(t_philo *phl, char *c, char *stt, int i)
 {
 	char			*tim;
 	char			*ide;
 	char			msg[100];
+	int				j;
 
 	pthread_mutex_lock(&phl->st_all->printr);
 	tim = ft_itoa(ft_time_elapsed(phl->st_all->tm_stt));
@@ -65,14 +66,14 @@ void				ft_msg_select(t_philo *phl)
 		(!phl->st_all->is_die && phl->st_all->c_meal == 0))
 	{
 		if (phl->status == TAK)
-			ft_msg_prt(phl, ANSI_CYA, "] has taken a fork.\n", 0, 0);
+			ft_msg_prt(phl, ANSI_CYA, "] has taken a fork.\n", 0);
 		else if (phl->status == THK)
-			ft_msg_prt(phl, ANSI_YEL, "] is thinking.\n", 0, 0);
+			ft_msg_prt(phl, ANSI_YEL, "] is thinking.\n", 0);
 		else if (phl->status == EAT)
-			ft_msg_prt(phl, ANSI_GRE, "] is eating.\n", 0, 0);
+			ft_msg_prt(phl, ANSI_GRE, "] is eating.\n", 0);
 		else if (phl->status == SLP)
-			ft_msg_prt(phl, ANSI_BLU, "] is sleeping.\n", 0, 0);
+			ft_msg_prt(phl, ANSI_BLU, "] is sleeping.\n", 0);
 		else if (phl->status == DIE)
-			ft_msg_prt(phl, ANSI_RED, "] is dead now. :(\n", 0, 0);
+			ft_msg_prt(phl, ANSI_RED, "] is dead now. :(\n", 0);
 	}
 }
