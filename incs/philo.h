@@ -6,7 +6,7 @@
 /*   By: kimkwanho <kimkwanho@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 10:43:30 by kimkwanho         #+#    #+#             */
-/*   Updated: 2021/07/24 19:23:03 by kimkwanho        ###   ########.fr       */
+/*   Updated: 2021/07/24 21:00:44 by kimkwanho        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@
 ** definitions - struct
 */
 
-typedef				enum e_status
+typedef enum		e_status
 {
 	THK,
 	DIE,
@@ -51,7 +51,7 @@ typedef				enum e_status
 	SLP
 }					t_status;
 
-typedef				struct s_philo
+typedef struct		s_philo
 {
 	int				ph_idx;
 	t_status		status;
@@ -62,7 +62,7 @@ typedef				struct s_philo
 	struct s_all	*st_all;
 }					t_philo;
 
-typedef				struct s_all
+typedef struct		s_all
 {
 	int				ph_cnt;
 	int				tm_die;
