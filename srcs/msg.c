@@ -6,17 +6,19 @@
 /*   By: kimkwanho <kimkwanho@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 15:04:54 by kimkwanho         #+#    #+#             */
-/*   Updated: 2021/07/24 19:23:18 by kimkwanho        ###   ########.fr       */
+/*   Updated: 2021/07/24 19:27:18 by kimkwanho        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/philo.h"
 
-void				ft_msg_0(char *m, char *t, char *c, int *i)
+void				ft_msg_0(char *m, t_philo *phl, char *c, int *i)
 {
 	int				j;
+	char			*t;
 
 	j = 0;
+	t = ft_itoa(ft_time_elapsed(phl->st_all->tm_stt));
 	while (j < ft_strlen(c))
 		m[(*i)++] = c[j++];
 	j = 0;
@@ -26,19 +28,19 @@ void				ft_msg_0(char *m, char *t, char *c, int *i)
 	m[(*i)++] = ']';
 	m[(*i)++] = '\t';
 	m[(*i)++] = '[';
+	free(t);
 }
 
 void				ft_msg_prt(t_philo *phl, char *c, char *stt, int i)
 {
-	char			*tim;
 	char			*ide;
 	char			msg[100];
 	int				j;
 
+	j = 0;
 	pthread_mutex_lock(&phl->st_all->printr);
-	tim = ft_itoa(ft_time_elapsed(phl->st_all->tm_stt));
 	ide = ft_itoa(phl->ph_idx);
-	ft_msg_0(msg, tim, c, &i);
+	ft_msg_0(msg, phl, c, &i);
 	while (ide[j])
 		msg[i++] = ide[j++];
 	j = 0;
@@ -55,7 +57,6 @@ void				ft_msg_prt(t_philo *phl, char *c, char *stt, int i)
 		write(1, msg, i);
 	pthread_mutex_unlock(&phl->st_all->printr);
 	free(ide);
-	free(tim);
 }
 
 void				ft_msg_select(t_philo *phl)
