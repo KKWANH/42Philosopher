@@ -6,7 +6,7 @@
 /*   By: kimkwanho <kimkwanho@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 18:59:04 by kimkwanho         #+#    #+#             */
-/*   Updated: 2021/07/24 20:34:37 by kimkwanho        ###   ########.fr       */
+/*   Updated: 2021/07/24 20:42:08 by kimkwanho        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int					ft_clear(t_all *all)
 
 int					ft_error(int opt)
 {
-	printf(ANSI_RED ANSI_BOL "[ERROR] " ANSI_RES ANSI_BOL ANSI_YEL);
+	printf(ANSI_RED "" ANSI_BOL "[ERROR] " ANSI_RES "" ANSI_BOL "" ANSI_YEL);
 	if (opt == 0)
 		printf("Invalid number of parameters. :(\n" ANSI_RES);
 	if (opt == 1)
